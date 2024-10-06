@@ -1,0 +1,95 @@
+:root {
+    --primary-color: #ff6f61;
+    --secondary-color: #ffb6b9;
+    --background-color: #3b3b98;
+    --text-color: #f5f5f5;
+    --button-hover: #e63946;
+    --winning-blocks: #28a745; /* New color for winning cells */
+    --gradient: linear-gradient(135deg, #ff6f61, #ffb6b9);
+}
+
+body {
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    background-image: var(--gradient);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 54px;
+    text-transform: capitalize;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.container {
+    padding: 40px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#gameboard {
+    width: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 120px;
+    border: 2px solid var(--primary-color);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+.box:nth-child(3n) {
+    border-right: none;
+}
+
+.box:nth-child(6) ~ .box {
+    border-bottom: none;
+}
+
+.box:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+button {
+    padding: 15px 30px;
+    border-radius: 25px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--button-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
